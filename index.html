@@ -119,6 +119,80 @@
         #zulu-content {
             display: none;
         }
+
+        /* Game specific styles */
+        #game-area {
+            text-align: center;
+        }
+        #question-container {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        #answer-buttons button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #answer-buttons button:hover {
+            opacity: 0.9;
+        }
+        #feedback-container {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+        .feedback-correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback-incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        #next-question-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            display: none; /* Hidden by default */
+        }
+        #next-question-button:hover {
+            opacity: 0.9;
+        }
+        #game-over-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none;
+        }
+        #restart-game-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            display: none;
+        }
+        #restart-game-button:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -167,7 +241,7 @@
                         <p><strong>Treatment:</strong> Take BP pills daily from clinic. Don’t skip doses. Eat healthy, exercise, check BP often. Treatment is lifelong.</p>
                     </article>
                 </section>
-                 <section id="feelings-en">
+                <section id="feelings-en">
                     <h2>😌 Emotional Well-being</h2>
                     <p><strong>1. Anxious:</strong> Breathe. You have survived every hard day so far. This moment will pass. You are safe and stronger than you feel.</p>
                     <p><strong>2. Depressed:</strong> Your pain is real but so is hope. Take small steps. You matter more than you know. You are not alone.</p>
@@ -190,36 +264,17 @@
                 </section>
                 <section id="game-en">
                     <h2>🤔 Myth or Truth Game</h2>
-                    <article class="myth-truth-item">
-                        <p><strong>1. Myth:</strong> "If both partners have HIV, they can’t reinfect each other."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Even if both partners have HIV, unsafe sex can lead to HIV reinfection with a stronger strain. Always use protection.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>2. Statement:</strong> "You can have a baby without passing HIV to the child."<br><strong>Answer:</strong> <span class="answer answer-true">True</span>. Yes. If the mother takes ARVs and follows clinic care, the baby can be born HIV-negative. Always deliver at a clinic.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>3. Myth:</strong> "If you feel better, you can stop TB meds."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Never stop TB meds early. Even if you feel better, you must finish the 6 months or TB can come back stronger.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>4. Myth:</strong> "Only fat people get diabetes."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Anyone can get diabetes, even thin people. Family history, poor diet, and little exercise are big risks.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>5. Myth:</strong> "You can feel when your blood pressure is high."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Most people feel nothing. That is why it is called the "silent killer." Always check your BP at the clinic.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>6. Myth:</strong> "You cannot get pregnant on your period."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. You can get pregnant during your period, especially if your cycle is short. Use protection every time.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>7. Myth:</strong> "Depression is just sadness and you must snap out of it."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Depression is an illness, not just sadness. You cannot just "snap out of it." Get help and support from a clinic or SADAG.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>8. Myth:</strong> "If you have anxiety, you are weak."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Anxiety is not weakness. It is a health condition and can be managed with support, breathing, and sometimes treatment.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>9. Statement:</strong> "You can date someone with HIV and never get it."<br><strong>Answer:</strong> <span class="answer answer-true">True</span>. Yes. With condoms and PrEP, HIV cannot be passed. HIV is not a death sentence. Love safely and smartly.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>10. Myth:</strong> "Drinking alcohol helps you relax, so it’s good for stress."<br><strong>Answer:</strong> <span class="answer answer-false">False</span>. Alcohol may feel relaxing, but it makes stress worse over time and harms your health. Get real help if you feel overwhelmed.</p>
-                    </article>
+                    <div id="game-area-en">
+                        <div id="question-container-en"></div>
+                        <div id="answer-buttons-en">
+                            <button onclick="checkAnswer('true', 'en')">Truth</button>
+                            <button onclick="checkAnswer('false', 'en')">Myth</button>
+                        </div>
+                        <div id="feedback-container-en"></div>
+                        <button id="next-question-button-en" onclick="nextQuestion('en')">Next Question</button>
+                        <div id="game-over-message-en">Game Over! Thanks for playing!</div>
+                        <button id="restart-game-button-en" onclick="startGame('en')">Restart Game</button>
+                    </div>
                 </section>
                 <section id="emergency-en">
                     <h2>🆘 Emergency Contact List</h2>
@@ -330,40 +385,21 @@
                 </section>
                 <section id="game-zu">
                     <h2>🤔 Umdlalo Weqiniso Nenganekwane</h2>
-                    <article class="myth-truth-item">
-                        <p><strong>1. Inganekwane:</strong> "Uma bobabili bene HIV abakwazi ukusulelelanisa futhi."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Noma nobabili nine HIV, ucansi olungaphephile lungabangela uhlobo olusha oluqinile. Sebenzisa ikondomu njalo.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>2. Isitatimende:</strong> "Ungazala ingane ngaphandle kokuyithelela iHIV."<br><strong>Impendulo:</strong> <span class="answer answer-true">Iqiniso</span>. Yebo. Uma umama ethatha ama-ARV futhi aye ekliniki, ingane ingazalwa ingenayo i-HIV. Zala esibhedlela kuphela.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>3. Inganekwane:</strong> "Uma usuzizwa ungcono, ungayeka imithi ye TB."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ungayeki imithi ye TB noma usuzizwa ungcono. Qeda izinyanga eziyisithupha noma isifo sizobuya siqine.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>4. Inganekwane:</strong> "Abantu abakhuluphele kuphela abathola iDiabetes."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Noma ubani angayithola i-Diabetes. Ukudla kabi, ukungazivocavoci, nomlando womndeni kuyingozi enkulu.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>5. Inganekwane:</strong> "Uzokwazi uma ingcindezi igcwele emzimbeni wakho."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Abaningi abakwazi lutho. I-BP ibizwa ngesibulala buthule. Hlola i-BP yakho njalo ekliniki.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>6. Inganekwane:</strong> "Awukwazi ukukhulelwa uma une period."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ungakhulelwa nasenkathini yakho, ikakhulukazi uma umjikelezo mfushane. Sebenzisa ivikelo njalo.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>7. Inganekwane:</strong> "IDepression ukudabuka kuphela ungakuyeka."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. I-Depression isifo, hhayi ukudabuka nje. Udinga usizo nolwelapheko. Hamba ekliniki noma shayela i-SADAG.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>8. Inganekwane:</strong> "Ukukhathazeka kubonisa ubuthakathaka."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ukukhathazeka akusona isici. Kungelashwa. Ngamanye amahora kudinga usizo.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>9. Isitatimende:</strong> "Ungathandana nomuntu one HIV ungayitholi."<br><strong>Impendulo:</strong> <span class="answer answer-true">Iqiniso</span>. Yebo. Uma usebenzisa ikondomu noma i-PrEP, ngeke usuleleke. I-HIV ayisona isigwebo sokufa. Thandana ngokuhlakanipha.</p>
-                    </article>
-                    <article class="myth-truth-item">
-                        <p><strong>10. Inganekwane:</strong> "Utshwala busiza ukunciphisa ingcindezi."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Utshwala abunciphisi ingcindezi. Njengoba isikhathi sihamba, lwenza isimo sibe sibi. Thola usizo lwangempela.</p>
-                    </article>
+                    <div id="game-area-zu">
+                        <div id="question-container-zu"></div>
+                        <div id="answer-buttons-zu">
+                            <button onclick="checkAnswer('true', 'zu')">Iqiniso</button>
+                            <button onclick="checkAnswer('false', 'zu')">Inganekwane</button>
+                        </div>
+                        <div id="feedback-container-zu"></div>
+                        <button id="next-question-button-zu" onclick="nextQuestion('zu')">Umbuzo Olandelayo</button>
+                        <div id="game-over-message-zu">Umdlalo Uphelile! Ngiyabonga ngokudlala!</div>
+                        <button id="restart-game-button-zu" onclick="startGame('zu')">Qala Kabusha Umdlalo</button>
+                    </div>
                 </section>
                 <section id="emergency-zu">
                     <h2>🆘 Uhlu Lwezixhumanisi Eziphuthumayo</h2>
-                     <ul class="emergency-list">
+                    <ul class="emergency-list">
                         <li><span>I-Ambulensi noma Umlilo</span> <span class="number">10177</span></li>
                         <li><span>Udlame Olubhekiswe Kwabantu Besifazane</span> <span class="number">0800 428 428</span></li>
                         <li><span>Udlame Ezinganeni noma Ukunganakwa</span> <span class="number">0800 055 555</span></li>
@@ -414,9 +450,11 @@
             if (lang === 'en') {
                 document.getElementById('english-content').style.display = 'block';
                 document.documentElement.lang = 'en';
+                startGame('en'); // Start the game for English
             } else if (lang === 'zu') {
                 document.getElementById('zulu-content').style.display = 'block';
                 document.documentElement.lang = 'zu';
+                startGame('zu'); // Start the game for Zulu
             }
         }
 
@@ -446,29 +484,210 @@
                 };
             }
 
-            if (selected.includes('tiredness') && selected.includes('mouth sores')) {
+            if (selected.includes('tiredness') && selected.includes('weight loss') && selected.includes('night sweats') && selected.includes('mouth sores')) {
                 results.push(conditions.hiv);
             }
-            if (selected.includes('cough') && selected.includes('chest pain')) {
+            if (selected.includes('cough') && selected.includes('chest pain') && selected.includes('fever') && selected.includes('weight loss')) {
                 results.push(conditions.tb);
             }
-            if (selected.includes('frequent urination') && selected.includes('blurred vision')) {
+            if (selected.includes('frequent urination') && selected.includes('tiredness') && selected.includes('blurred vision')) {
                 results.push(conditions.diabetes);
             }
-            if (selected.includes('headache') && selected.includes('blurred vision')) {
-                results.push(conditions.hypertension);
+            if (selected.includes('headache') || selected.includes('blurred vision')) {
+                // Hypertension can be silent, so these are just possible indicators, not definitive
+                if (!results.includes(conditions.hypertension)) { // Avoid duplicates
+                    results.push(conditions.hypertension);
+                }
             }
 
-            // Remove duplicates
-            const uniqueResults = [...new Set(results)];
-
-            const display = uniqueResults.length
-                ? `<strong>${possibleConditionsText}</strong> ${uniqueResults.join(', ')}`
-                : noMatchText;
-
-            document.getElementById(resultsId).innerHTML = display;
+            const resultsDiv = document.getElementById(resultsId);
+            if (results.length > 0) {
+                resultsDiv.innerHTML = `<h4>${possibleConditionsText}</h4><ul>${results.map(res => `<li>${res}</li>`).join('')}</ul><p>Please consult a healthcare professional for a proper diagnosis.</p>`;
+            } else {
+                resultsDiv.innerHTML = `<p>${noMatchText}</p>`;
+            }
         }
-    </script>
 
+        // Game Logic
+        let currentQuestionIndex = 0;
+        let questions = {
+            en: [
+                {
+                    question: "If both partners have HIV, they can’t reinfect each other.",
+                    answer: false,
+                    explanation: "Even if both partners have HIV, unsafe sex can lead to HIV reinfection with a stronger strain. Always use protection."
+                },
+                {
+                    question: "You can have a baby without passing HIV to the child.",
+                    answer: true,
+                    explanation: "Yes. If the mother takes ARVs and follows clinic care, the baby can be born HIV-negative. Always deliver at a clinic."
+                },
+                {
+                    question: "If you feel better, you can stop TB meds.",
+                    answer: false,
+                    explanation: "Never stop TB meds early. Even if you feel better, you must finish the 6 months or TB can come back stronger."
+                },
+                {
+                    question: "Only fat people get diabetes.",
+                    answer: false,
+                    explanation: "Anyone can get diabetes, even thin people. Family history, poor diet, and little exercise are big risks."
+                },
+                {
+                    question: "You can feel when your blood pressure is high.",
+                    answer: false,
+                    explanation: "Most people feel nothing. That is why it is called the 'silent killer.' Always check your BP at the clinic."
+                },
+                {
+                    question: "You cannot get pregnant on your period.",
+                    answer: false,
+                    explanation: "You can get pregnant during your period, especially if your cycle is short. Use protection every time."
+                },
+                {
+                    question: "Depression is just sadness and you must snap out of it.",
+                    answer: false,
+                    explanation: "Depression is an illness, not just sadness. You cannot just 'snap out of it.' Get help and support from a clinic or SADAG."
+                },
+                {
+                    question: "If you have anxiety, you are weak.",
+                    answer: false,
+                    explanation: "Anxiety is not weakness. It is a health condition and can be managed with support, breathing, and sometimes treatment."
+                },
+                {
+                    question: "You can date someone with HIV and never get it.",
+                    answer: true,
+                    explanation: "Yes. With condoms and PrEP, HIV cannot be passed. HIV is not a death sentence. Love safely and smartly."
+                },
+                {
+                    question: "Drinking alcohol helps you relax, so it’s good for stress.",
+                    answer: false,
+                    explanation: "Alcohol may feel relaxing, but it makes stress worse over time and harms your health. Get real help if you feel overwhelmed."
+                }
+            ],
+            zu: [
+                {
+                    question: "Uma bobabili bene HIV abakwazi ukusulelelanisa futhi.",
+                    answer: false,
+                    explanation: "Noma nobabili nine HIV, ucansi olungaphephile lungabangela uhlobo olusha oluqinile. Sebenzisa ikondomu njalo."
+                },
+                {
+                    question: "Ungazala ingane ngaphandle kokuyithelela iHIV.",
+                    answer: true,
+                    explanation: "Yebo. Uma umama ethatha ama-ARV futhi aye ekliniki, ingane ingazalwa ingenayo i-HIV. Zala esibhedlela kuphela."
+                },
+                {
+                    question: "Uma usuzizwa ungcono, ungayeka imithi ye TB.",
+                    answer: false,
+                    explanation: "Ungayeki imithi ye TB noma usuzizwa ungcono. Qeda izinyanga eziyisithupha noma isifo sizobuya siqine."
+                },
+                {
+                    question: "Abantu abakhuluphele kuphela abathola iDiabetes.",
+                    answer: false,
+                    explanation: "Noma ubani angayithola i-Diabetes. Ukudla kabi, ukungazivocavoci, nomlando womndeni kuyingozi enkulu."
+                },
+                {
+                    question: "Uzokwazi uma ingcindezi igcwele emzimbeni wakho.",
+                    answer: false,
+                    explanation: "Abaningi abakwazi lutho. I-BP ibizwa ngesibulala buthule. Hlola i-BP yakho njalo ekliniki."
+                },
+                {
+                    question: "Awukwazi ukukhulelwa uma une period.",
+                    answer: false,
+                    explanation: "Ungakhulelwa nasenkathini yakho, ikakhulukazi uma umjikelezo mfushane. Sebenzisa ivikelo njalo."
+                },
+                {
+                    question: "IDepression ukudabuka kuphela ungakuyeka.",
+                    answer: false,
+                    explanation: "I-Depression isifo, hhayi ukudabuka nje. Udinga usizo nolwelapheko. Hamba ekliniki noma shayela i-SADAG."
+                },
+                {
+                    question: "Ukukhathazeka kubonisa ubuthakathaka.",
+                    answer: false,
+                    explanation: "Ukukhathazeka akusona isici. Kungelashwa. Ngamanye amahora kudinga usizo."
+                },
+                {
+                    question: "Ungathandana nomuntu one HIV ungayitholi.",
+                    answer: true,
+                    explanation: "Yebo. Uma usebenzisa ikondomu noma i-PrEP, ngeke usuleleke. I-HIV ayisona isigwebo sokufa. Thandana ngokuhlakanipha."
+                },
+                {
+                    question: "Utshwala busiza ukunciphisa ingcindezi.",
+                    answer: false,
+                    explanation: "Utshwala abunciphisi ingcindezi. Njengoba isikhathi sihamba, lwenza isimo sibe sibi. Thola usizo lwangempela."
+                }
+            ]
+        };
+
+        function displayQuestion(lang) {
+            const questionContainer = document.getElementById(`question-container-${lang}`);
+            const feedbackContainer = document.getElementById(`feedback-container-${lang}`);
+            const nextButton = document.getElementById(`next-question-button-${lang}`);
+            const answerButtons = document.getElementById(`answer-buttons-${lang}`);
+            const gameOverMessage = document.getElementById(`game-over-message-${lang}`);
+            const restartButton = document.getElementById(`restart-game-button-${lang}`);
+
+            feedbackContainer.style.display = 'none';
+            nextButton.style.display = 'none';
+            gameOverMessage.style.display = 'none';
+            restartButton.style.display = 'none';
+            answerButtons.style.display = 'block'; // Ensure buttons are visible
+
+            if (currentQuestionIndex < questions[lang].length) {
+                const q = questions[lang][currentQuestionIndex];
+                questionContainer.innerHTML = q.question;
+            } else {
+                questionContainer.innerHTML = ''; // Clear question
+                answerButtons.style.display = 'none'; // Hide answer buttons
+                gameOverMessage.style.display = 'block'; // Show game over message
+                restartButton.style.display = 'block'; // Show restart button
+            }
+        }
+
+        function checkAnswer(userAnswer, lang) {
+            const currentQuestion = questions[lang][currentQuestionIndex];
+            const feedbackContainer = document.getElementById(`feedback-container-${lang}`);
+            const nextButton = document.getElementById(`next-question-button-${lang}`);
+            const answerButtons = document.getElementById(`answer-buttons-${lang}`);
+
+            const isCorrect = (userAnswer === 'true' && currentQuestion.answer === true) ||
+                              (userAnswer === 'false' && currentQuestion.answer === false);
+
+            feedbackContainer.style.display = 'block';
+            answerButtons.style.display = 'none'; // Hide answer buttons after selection
+            nextButton.style.display = 'block'; // Show next question button
+
+            if (isCorrect) {
+                feedbackContainer.className = 'feedback-container feedback-correct';
+                feedbackContainer.innerHTML = lang === 'en' ? `✅ **Correct!** ${currentQuestion.explanation}` : `✅ **Kulungile!** ${currentQuestion.explanation}`;
+            } else {
+                feedbackContainer.className = 'feedback-container feedback-incorrect';
+                feedbackContainer.innerHTML = lang === 'en' ? `❌ **Incorrect.** ${currentQuestion.explanation}` : `❌ **Akulungile.** ${currentQuestion.explanation}`;
+            }
+        }
+
+        function nextQuestion(lang) {
+            currentQuestionIndex++;
+            displayQuestion(lang);
+        }
+
+        function startGame(lang) {
+            currentQuestionIndex = 0;
+            // Shuffle questions for a new game experience each time
+            shuffleArray(questions[lang]);
+            displayQuestion(lang);
+        }
+
+        // Fisher-Yates (Knuth) Shuffle algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Initialize game for the default language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showLanguage('en'); // Set default to English and start game
+        });
+    </script>
 </body>
 </html>
