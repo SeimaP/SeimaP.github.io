@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu eHealth (isiZulu)</title>
+    <style>
+        :root {
+            --primary-color: #005a9c;
+            --secondary-color: #f1f1f1;
+            --text-color: #333;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        header p {
+            margin-top: 5px;
+            font-style: italic;
+        }
+        header .lang-switcher {
+            margin-top: 15px;
+        }
+        header .lang-switcher a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        main > section {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            border-left: 5px solid var(--primary-color);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #1a1a1a;
+            margin-top: 25px;
+        }
+        strong {
+            color: var(--primary-color);
+        }
+        .myth-truth-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .myth-truth-item:last-child {
+            border-bottom: none;
+        }
+        .answer {
+            font-weight: bold;
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: white;
+        }
+        .answer-true { background-color: #28a745; }
+        .answer-false { background-color: #dc3545; }
+        .emergency-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .emergency-list li {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .emergency-list li:last-child {
+            border-bottom: none;
+        }
+        .emergency-list .number {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ubuntu eHealth (isiZulu)</h1>
+        <p>Umthombo wakho wolwazi lwezempilo.</p>
+        <div class="lang-switcher">
+            <a href="index_en.html">Shintshela kusiNgisi</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="home">
+                <h2>🏠 Ekhaya</h2>
+                <h3>Umlayezo Wethemba</h3>
+                <p>Usaphila. Usamile. Usazama. Lokho kukunika amandla. Asikho isiphepho esihlala phakade. Umhlaba udinga ukukhanya kwakho.</p>
+            </section>
+
+            <section id="conditions">
+                <h2>❤️ Izifo</h2>
+                <article>
+                    <h3>1. HIV</h3>
+                    <p><strong>Izimpawu:</strong> I-HIV ayinalo uphawu ekuqaleni. Kamuva kuba ukukhathala, ukuncipha umzimba, umkhuhlane wamabele, izilonda. Eya ekliniki.</p>
+                    <p><strong>Ukuvimbela:</strong> Sebenzisa ikondomu. Hlola njalo. Ungabelani ngemibese noma izinaliti. Thatha iPrEP uma usesengozini. Beka umlingani oyedwa.</p>
+                    <p><strong>Ukwelashwa:</strong> Ayipholiswa kodwa ama-ARV ayasiza ukuphila isikhathi eside. Phuza nsuku zonke. Hamba ekliniki. Ungaphutheli umthamo.</p>
+                </article>
+                <article>
+                    <h3>2. Isifo sofuba (Tuberculosis)</h3>
+                    <p><strong>Izimpawu:</strong> Ukukhwehlela amasonto angu-2 noma ngaphezulu, ubuhlungu besifuba, umkhuhlane, izinzwa ebusuku, ukwehla kwesisindo. Iya ekliniki.</p>
+                    <p><strong>Ukuvimbela:</strong> Vala umlomo uma ukhwihilizela. Vula amafasitela. Gwema ukusondela kwabantu. Qeda umjikelezo wemithi ka-TB ngokuphelele.</p>
+                    <p><strong>Ukwelashwa:</strong> Uthola imithi mahhala ekliniki izinyanga eziyisi-6. Phuza nsuku zonke. Ungayeki noma uzizwa ungcono, i-TB ingabuya iqine.</p>
+                </article>
+                <article>
+                    <h3>3. Isifo sikashukela (Diabetes)</h3>
+                    <p><strong>Izimpawu:</strong> Uhlale womile, uya endlini njalo, ukukhathala, ukubona kabi, amanxeba angelapheki, ukwehla kwesisindo. Ukuya ekliniki.</p>
+                    <p><strong>Ukuvimbela:</strong> Yidla kahle. Nciphisa ushukela. Yenza ezemidlalo. Phuza amanzi. Hlola igazi uma umndeni unalesi sifo.</p>
+                    <p><strong>Ukwelashwa:</strong> Uthola amaphilisi noma i-insulin ekliniki. Yidla kahle, gwema ushukela, qeqesha umzimba, hlola ushukela njalo.</p>
+                </article>
+                <article>
+                    <h3>4. Ingcindezi ephezulu (Hypertension)</h3>
+                    <p><strong>Izimpawu:</strong> Ayinazo izimpawu eziningi. Kungaba yikhanda, ukubona kabi, ukuphelelwa amandla. Hlola i-BP njalo, ungasilindi isibonakaliso.</p>
+                    <p><strong>Ukuvimbela:</strong> Gwema usawoti, ukudla okunamafutha. Tshiya ugwayi. Zilolonge. Nciphisa ukucindezeleka. Phuza amanzi.</p>
+                    <p><strong>Ukwelashwa:</strong> Phuza amaphilisi we-BP nsuku zonke ekliniki. Ungaphutheli. Yidla kahle, zilolonge, hlola i-BP njalo. Ukwelashwa kuphila isikhathi sonke.</p>
+                </article>
+            </section>
+
+            <section id="feelings">
+                <h2>😌 Imizwa</h2>
+                <p><strong>1. Ukukhathazeka:</strong> Phefumula. Usinde kuzo zonke izinsuku ezinzima. Lena izodlula. Uphila. Uphakamile kunalokho ozwa ngakho.</p>
+                <p><strong>2. Ukudangala:</strong> Ubuhlungu bakho buyiqiniso, ithemba likhona. Thatha izinyathelo ezincane. Awuwedwa. Ubalulekile kakhulu.</p>
+                <p><strong>3. Ukuthukuthela:</strong> Phefumula. Usebenzise amandla akho ukwakha hhayi ukubhidliza. Ulawula wena. Awuyona intukuthelo yakho.</p>
+                <p><strong>4. Ukweswela abangane:</strong> Awukho wedwa. Ngisho noma uzizwa kanjalo, unothando. Umhlaba uhlakaniphile ngokuba nawe kuwo.</p>
+                <p><strong>5. Ukukhathala:</strong> Ukuphumula akusona ubuthakathaka. Ubelokhu uqine isikhathi eside. Phefumula. Ukuphumula kuyavunyelwa.</p>
+                <p><strong>6. Ukuphelelwa ithemba:</strong> Ubumnyama buyadlula. Ungayeki ngaphambi kokuphumelela. Ukukhanya kuyaqhamuka. Qhubeka uphefumula.</p>
+                <p><strong>7. Ukudideka:</strong> Kulungile ukungabi nezimpendulo. Ukucaca kuza nesikhathi. Inyathelo elincane nalo libalulekile.</p>
+                <p><strong>8. Ukucindezeleka:</strong> Awukwazi ukulawula konke. Kodwa ungaphefumula kanye bese futhi. Wenza konke okusemandleni akho.</p>
+                <p><strong>9. Ukungazizwa:</strong> Ukungazizwa akusho ukuthi uphukile. Ukuphila kosuku olulodwa nakho kuyindlela yokululama.</p>
+                <p><strong>10. Ukulila:</strong> Ilahleko yakho ibalulekile. Kanye nokululama kwakho. Khala uma kudingeka. Uthando luhlala ngezikumbuzo.</p>
+            </section>
+
+            <section id="periods">
+                <h2>♀️ Imininingwane Ngezinyanga</h2>
+                <p><strong>1. Kuyini ukuya enyangeni?</strong> Ukuya enyangeni kwenzeka nxa igazi liphuma esibelethweni njalo ngenyanga. Kusho ukuthi umzimba usukulungele ukuthwala ingane.</p>
+                <p><strong>2. Kuhlala isikhathi esingakanani?</strong> Ihlala izinsuku ezi-3 kuya kweziyi-7. Iza njalo ngenyanga kodwa ingashintsha kwabanye. Kulungile ukuyiphuthelwa kwesinye isikhathi.</p>
+                <p><strong>3. Izimpawu:</strong> Ungakhathala, uzwe izinhlungu emhlane noma esiswini, ube nezinhlungu ezibuhlungu noma uzizwe ugcwele noma uphuphume izinduna.</p>
+                <p><strong>4. Izindlela zokuthoba izinhlungu:</strong> Sebenzisa ibhodlela elishisayo, phuza amanzi, phumula, thatha amaphilisi ekliniki. Ukuzivocavoca nokudla kahle kuyasiza.</p>
+                <p><strong>5. Ingabe ngingakhulelwa?</strong> Yebo. Ungakhulelwa nasenkathini yakho. Isidoda sihlala emzimbeni izinsuku. Sebenzisa ivikelo njalo.</p>
+            </section>
+
+            <section id="game">
+                <h2>🤔 Umdlalo Weqiniso Nenganekwane</h2>
+                <article class="myth-truth-item">
+                    <p><strong>1. Inganekwane:</strong> "Uma bobabili bene HIV abakwazi ukusulelelanisa futhi."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Noma nobabili nine HIV, ucansi olungaphephile lungabangela uhlobo olusha oluqinile. Sebenzisa ikondomu njalo.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>2. Isitatimende:</strong> "Ungazala ingane ngaphandle kokuyithelela iHIV."<br><strong>Impendulo:</strong> <span class="answer answer-true">Iqiniso</span>. Yebo. Uma umama ethatha ama-ARV futhi aye ekliniki, ingane ingazalwa ingenayo i-HIV. Zala esibhedlela kuphela.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>3. Inganekwane:</strong> "Uma usuzizwa ungcono, ungayeka imithi ye TB."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ungayeki imithi ye TB noma usuzizwa ungcono. Qeda izinyanga eziyisithupha noma isifo sizobuya siqine.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>4. Inganekwane:</strong> "Abantu abakhuluphele kuphela abathola iDiabetes."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Noma ubani angayithola i-Diabetes. Ukudla kabi, ukungazivocavoci, nomlando womndeni kuyingozi enkulu.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>5. Inganekwane:</strong> "Uzokwazi uma ingcindezi igcwele emzimbeni wakho."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Abaningi abakwazi lutho. I-BP ibizwa ngesibulala buthule. Hlola i-BP yakho njalo ekliniki.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>6. Inganekwane:</strong> "Awukwazi ukukhulelwa uma une period."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ungakhulelwa nasenkathini yakho, ikakhulukazi uma umjikelezo mfushane. Sebenzisa ivikelo njalo.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>7. Inganekwane:</strong> "IDepression ukudabuka kuphela ungakuyeka."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. I-Depression isifo, hhayi ukudabuka nje. Udinga usizo nolwelapheko. Hamba ekliniki noma shayela i-SADAG.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>8. Inganekwane:</strong> "Ukukhathazeka kubonisa ubuthakathaka."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Ukukhathazeka akusona isici. Kungelashwa. Ngamanye amahora kudinga usizo.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>9. Isitatimende:</strong> "Ungathandana nomuntu one HIV ungayitholi."<br><strong>Impendulo:</strong> <span class="answer answer-true">Iqiniso</span>. Yebo. Uma usebenzisa ikondomu noma i-PrEP, ngeke usuleleke. I-HIV ayisona isigwebo sokufa. Thandana ngokuhlakanipha.</p>
+                </article>
+                <article class="myth-truth-item">
+                    <p><strong>10. Inganekwane:</strong> "Utshwala busiza ukunciphisa ingcindezi."<br><strong>Impendulo:</strong> <span class="answer answer-false">Amanga</span>. Utshwala abunciphisi ingcindezi. Njengoba isikhathi sihamba, lwenza isimo sibe sibi. Thola usizo lwangempela.</p>
+                </article>
+            </section>
+
+            <section id="emergency">
+                <h2>🆘 Uhlu Lwezixhumanisi Eziphuthumayo</h2>
+                 <ul class="emergency-list">
+                    <li><span>I-Ambulensi noma Umlilo</span> <span class="number">10177</span></li>
+                    <li><span>Udlame Olubhekiswe Kwabantu Besifazane</span> <span class="number">0800 428 428</span></li>
+                    <li><span>Udlame Ezinganeni noma Ukunganakwa</span> <span class="number">0800 055 555</span></li>
+                    <li><span>Ukuzibulala noma Ukudangala</span> <span class="number">0800 567 567 / SMS 31393</span></li>
+                    <li><span>Bika Ubugebengu</span> <span class="number">10111</span></li>
+                    <li><span>Ukuthunjwa Kwabantu</span> <span class="number">0800 222 777</span></li>
+                    <li><span>Izinkinga Notshwala noma Izidakamizwa</span> <span class="number">0800 121 314</span></li>
+                    <li><span>Usekelo Lwabantu be-LGBTQIA+</span> <span class="number">021 712 6699</span></li>
+                    <li><span>Ukuhlukumezeka noma Ukuhlukunyezwa ku-inthanethi</span> <span class="number">0800 45 46 47</span></li>
+                    <li><span>Ingxoxo ye-WhatsApp Ngengqondo</span> <span class="number">076 882 2775</span></li>
+                </ul>
+            </section>
+
+            <section id="symptom-checker">
+                <h2>🔍 Umhloli Wezimpawu</h2>
+                <p>Khetha izimpawu zakho ukuze ubone izifo ezingase zihambisane nazo.</p>
+
+                <form id="checker-form">
+                    <label><input type="checkbox" value="tiredness"> Ukukhathala</label><br>
+                    <label><input type="checkbox" value="weight loss"> Ukwehla Kwesisindo</label><br>
+                    <label><input type="checkbox" value="night sweats"> Ukuphefumula Okungajwayelekile Ebusuku</label><br>
+                    <label><input type="checkbox" value="mouth sores"> Izilonda zomlomo</label><br>
+                    <label><input type="checkbox" value="blurred vision"> Ukubona kancane</label><br>
+                    <label><input type="checkbox" value="headache"> Izinhlungu Zekhanda</label><br>
+                    <label><input type="checkbox" value="cough"> Ukukhwehlela</label><br>
+                    <label><input type="checkbox" value="chest pain"> Ubuhlungu Besifuba</label><br>
+                    <label><input type="checkbox" value="frequent urination"> Ukuchama Kaningi</label><br>
+                    <br>
+                    <button type="button" onclick="checkSymptoms()">Hlola</button>
+                </form>
+
+                <div id="results" style="margin-top: 20px;"></div>
+
+                <script>
+                    function checkSymptoms() {
+                        const selected = Array.from(document.querySelectorAll('#checker-form input:checked')).map(cb => cb.value);
+                        const results = [];
+
+                        if (selected.includes('tiredness') && selected.includes('mouth sores')) {
+                            results.push('HIV/AIDS');
+                        }
+                        if (selected.includes('cough') && selected.includes('chest pain')) {
+                            results.push('Isifo sofuba (TB)');
+                        }
+                        if (selected.includes('frequent urination') && selected.includes('blurred vision')) {
+                            results.push('Isifo sikashukela');
+                        }
+                        if (selected.includes('headache') && selected.includes('blurred vision')) {
+                            results.push('Ingcindezi ephezulu');
+                        }
+
+                        const display = results.length
+                            ? `<strong>Izifo ezingaba khona:</strong> ${results.join(', ')}`
+                            : 'Asikho isifo esitholakele. Vakashela ikliniki yangakini ukuze uthole usizo.';
+
+                        document.getElementById('results').innerHTML = display;
+                    }
+                </script>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Isaziso:</strong> Le webhusayithi inikeza ulwazi oluyisisekelo lwezempilo ngezinjongo zokufundisa. Ayithathi indawo yeseluleko sezokwelapha esivela kochwepheshe. Hlala uthintana nodokotela ekliniki yangakini ukuze uthole ukuxilongwa nokwelashwa.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
